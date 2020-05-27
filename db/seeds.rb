@@ -45,3 +45,17 @@ Post.create!( title:  "Hello World",
               content:  "Welcome to News+",
               user_id:  1,
               topic_id: 1,)
+
+# Generate dummy posts
+5.times do |n|
+  title     = Faker::Game.title
+  content   = Faker::Lorem.sentence(word_count: 100)
+  user_id   = 2
+  topic_id  = 2
+
+  Post.create!( title:    title,
+                content:  content,
+                user_id:  user_id,
+                topic_id: topic_id
+              )
+end
