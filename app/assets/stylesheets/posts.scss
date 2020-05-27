@@ -1,0 +1,59 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-span-item{
+    float: right;
+    margin-right: 10px;
+}
+
+.post-span-time{
+    margin-left: 25px;
+    color: #696969;
+}
+
+.post-username{
+    color:blue;
+}
+
+.post-user-info{
+    padding: 15px 0 5px 10px;
+    height: 100px;
+}
+
+.post-user-avatar{
+    border-radius: 50%;
+}
+
+.post-p-content{
+    font-size:14px;
+    white-space: pre-line;
+    word-wrap: break-word;
+}
+
+.post-span-comment{
+    background-color: #fafafa;
+    border-bottom: 5px solid red;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    width: 25%;
+    min-width: 100px;
+}
+
+.comment-body {
+    padding-left: 20px;
+}
+
+.subcomment {
+    padding-top: 5px;
+    border-top: 1px solid lightgray;
+}
+
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+
+Milky:
+  id: 1
+  name: Milky
+  email: milky@doggy.com
+  password_digest: <%= User.digest('password') %>
+  mobile: "0423900109"

@@ -1,0 +1,53 @@
+<% provide(:title, "My Setting") %>
+<body class="setting-container">
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-2 sidenav">
+
+      <div class="row post-title">
+        <i class="glyphicon glyphicon-send sidenav-icon"></i>
+        <%= link_to "My Profile", current_user%>
+      </div>
+
+      <div class="row post-title">
+        <i class="glyphicon glyphicon-user sidenav-icon"></i>
+        <%= link_to "My Posts", my_post_path%>
+      </div>
+
+      <div class="row post-title">
+        <i class="glyphicon glyphicon-comment sidenav-icon"></i>
+        <%= link_to "My Comments", my_comment_path%>
+      </div>
+
+      <div class="row post-title">
+        <i class="glyphicon glyphicon-ok sidenav-icon"></i>
+        <%= link_to "Comments to me", other_comment_path%>
+      </div>
+
+      <div class="row post-title"><i class="glyphicon glyphicon-cog sidenav-icon""></i>
+        <a href="#about">Setting</a>
+
+      </div>
+    </div>
+
+    <div class="col-sm-8 main-setting">
+      <div class="container-fluid m-20">
+        <div class="container-fluid nav-cover">
+          <div class="main-nav">
+            <%=link_to "Personal Info", setting_path,onclick:"user_setting_active(this)" ,remote: true%>
+            <%=link_to "Avatar", avatar_path,onclick:"user_setting_active(this)" , remote: true%>
+            <%=link_to "Password", password_path,onclick:"user_setting_active(this)" , remote: true%>
+            <%=link_to "Verification", verification_path,onclick:"user_setting_active(this)" , remote: true%>
+          </div>
+        </div>
+
+        <div id="setting-list">
+          <%= render partial: 'users/info' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

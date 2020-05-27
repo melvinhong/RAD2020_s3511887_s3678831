@@ -1,0 +1,54 @@
+<% provide(:title ,'Sign Up') %>
+
+<h1 class="my-1">Sign Up</h1>
+
+  <div class = "col-md-12">
+    <%= render'shared/error_messages' %>
+    <%= form_for(@user) do |f| %>
+
+      <div class="form-group my-1">
+        <%= f.label :name, class: "col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter Your Name"%>
+        </div>
+      </div>
+
+      <div class="form-group my-1">
+        <%= f.label :email, class:"col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter Your Email"%>
+        </div>
+      </div>
+
+      <div class="form-group my-1">
+        <%= f.label :password, class: "col-sm-2 col-form-label"%>
+        <div class="col-sm-10">
+          <%= f.password_field :password, class: "form-control", placeholder: "8-20 Characters" %>
+        </div>
+      </div>
+
+      <div class="form-group my-1">
+        <%= f.label :password_confirmation, "Confirmation", class:"col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Password" %>
+        </div>
+      </div>
+
+      <div class="form-group my-1">
+        <%= f.label :mobile, class:"col-sm-2 col-form-label" %>
+        <div class="col-sm-10">
+          <%= f.text_field :mobile, class: "form-control", placeholder: "Enter Your Mobile Number" %>
+        </div>
+      </div>
+
+      <div class = "col-md-10 pull-right">
+        <%= f.submit "Create my account" ,class: "btn btn-success" %>
+      </div>
+
+    <% end%>
+
+      <p class = "col-md-3 pull-right">
+       <br>
+       <%= link_to "Already A User?", login_path %>
+      </p>
+    </div>

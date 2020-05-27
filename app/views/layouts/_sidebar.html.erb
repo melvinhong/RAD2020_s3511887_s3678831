@@ -1,0 +1,70 @@
+
+<div class="col col-lg-2">
+<br>
+<!-- recent users container -->
+<div class="container side-bar mb-15">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Recent Members</h4>
+      <% get_recent_member.limit(9).each do |user| %>
+
+      <div class="col-sm-4">
+        <%= link_to user do %>
+      		 <%= image_tag get_avatar(user), class:'avatar-img' %>
+    		<%end%>
+
+        <p class="text-center sidebar-name">
+          <%= link_to user.name, user %>
+        </p>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- topic container -->
+
+<div class="container side-bar mb-15">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Topic</h4>
+      <p>
+      <% @topics.each do |topic| %>
+        <%= link_to topic.name, add_topic_path(:name => topic.name), onclick: "select_tag(this)" ,class: "sidebar-links-icon", remote: true%>
+      <% end %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- post container -->
+
+<div class="container side-bar mb-15">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"> Post </h4>
+      <% get_most_viewed_post.each do |post| %>
+        <h4 class="media-heading side-heading"><%= link_to post.title, post  , class:"custom-highlight"%></h4>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- links container -->
+
+<div class="container side-bar mb-15">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"> Links </h4>
+      <p class="sidebar-links">
+      <a href="https://www.rmit.edu.au/" class="sidebar-links-icon">RMIT</a>
+      <a href="https://rubyonrails.org/" class="sidebar-links-icon">Rails</a>
+      <a href="https://rmit.instructure.com/" class="sidebar-links-icon">Canvas</a>
+      <a href="https://github.com/s3511887" class="sidebar-links-icon">git</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+</div>
