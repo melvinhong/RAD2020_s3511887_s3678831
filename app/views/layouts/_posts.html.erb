@@ -1,5 +1,5 @@
 <div class="col-sm-12">
-<p>
+
   <% posts.each do |post| %>
 
       <div class="well" style="margin-bottom:5px;">
@@ -11,7 +11,8 @@
           </div>
               <div class="col-sm-11">
                 <h4 class="media-heading long-title">
-                  <%= link_to post.title, post, class:"custom-highlight" %></h4>
+                  <%= link_to post.title, post %>
+                </h4>
                 <p class="text-right">
                   <i class="glyphicon glyphicon-user"></i>
                   <%= link_to get_user(post.user_id).name, get_user(post.user_id), class:"custom-highlight" %>
@@ -29,9 +30,7 @@
                   <li class="glyphicon glyphicon-comment">
                     <%= post.comments.count %>
                   </li>
-                  <li>
                   |
-                  </li>
                   <li>
                     <i class="glyphicon glyphicon-eye-open"></i>
                     <%= post.viewed %>
@@ -41,6 +40,4 @@
         </div>
       </div>
   <% end %>
- </p>
-
 </div>
