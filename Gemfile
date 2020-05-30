@@ -12,9 +12,9 @@ gem 'rails-ujs', '~> 0.1.0'
 # Cookie
 gem 'js_cookie_rails'
 
-# Posts
-gem 'carrierwave'
-gem 'mini_magick'
+# image uploader
+gem 'carrierwave', '1.2.2'
+gem 'mini_magick', '4.7.0'
 # Boostrap
 gem 'bootstrap-sass', '3.3.7'
 
