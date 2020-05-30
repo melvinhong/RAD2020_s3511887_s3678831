@@ -8,7 +8,7 @@
 
 
 # Create main users
-User.create!(name:"RAD",email:"RAD@RAD.com",mobile:"0412345678",password:"Rails2020",city:"Melbourne")
+User.create!(name:"RAD",email:"RAD@RAD.com",mobile:"0412345678",password:"Rails2020",city:"Melbourne", avatar:"/uploads/user/1/rails.png")
 User.create!(name:"Melvin H", email:"mel@mel.com", mobile:"0423900100",password:"melvinrails", city:"Malaysia")
 User.create!(name:"LJ Wang", email:"lew@lew.com", mobile:"0409080706", password:"junwangrails", city:"Korea")
 

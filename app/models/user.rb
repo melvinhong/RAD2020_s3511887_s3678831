@@ -9,9 +9,9 @@ class User < ApplicationRecord
                uniqueness: { case_sensitive: false }
     before_save { self.email = self.email.downcase }
     has_secure_password
-    #password validation
+    # password validation
     validates :password, presence: true, length: { minimum: 8, maximum: 20 }, :if => :password
-    #phone validation
+    # mobile number validation
     VALID_MOBILE_REGEX = /\d/
     validates :mobile, presence: true,
                length: { minimum:10},
@@ -19,7 +19,7 @@ class User < ApplicationRecord
     has_many :posts, dependent: :destroy
     has_many :comments, dependent: :destroy
     has_one  :verification, dependent: :destroy
-    #avatar
+    # avatar upload
     mount_uploader :avatar, AvatarUploader
 
     def self.digest(string)
