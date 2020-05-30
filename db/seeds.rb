@@ -7,9 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Destroy all existing users
-User.destroy_all
-
 # Create main users
 User.create!(name:"RAD",email:"RAD@RAD.com",mobile:"0412345678",password:"Rails2020",city:"Melbourne")
 User.create!(name:"Melvin H", email:"mel@mel.com", mobile:"0423900100",password:"melvinrails", city:"Malaysia")
@@ -28,17 +25,11 @@ User.create!(name:"LJ Wang", email:"lew@lew.com", mobile:"0409080706", password:
                  password:  password)
 end
 
-# Destroy existing topics
-Topic.destroy_all
-
 # Create main topics
 Topic.create!(name:"RMIT")
 Topic.create!(name:"Game")
 Topic.create!(name:"V.R.")
 Topic.create!(name:"A.I.")
-
-# Destroy existing posts
-Post.destroy_all
 
 # Create welcome post
 Post.create!( title:  "Hello World",
