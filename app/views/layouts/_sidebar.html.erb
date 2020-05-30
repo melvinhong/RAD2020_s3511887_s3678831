@@ -6,7 +6,7 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Recent Members</h4>
-      <% get_recent_member.limit(12).each do |user| %>
+      <% get_recent_member.limit(8).each do |user| %>
 
       <div class="col-sm-3">
         <%= link_to user do %>
