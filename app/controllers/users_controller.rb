@@ -83,22 +83,21 @@ class UsersController < ApplicationController
   def my_posts
     @my_posts = Post.paginate(page: params[:page], per_page: 5).where(user_id: current_user.id)
   end
-  
-  private
-   def user_params
-    params.require(:user).
-      permit(:name,:email,:mobile,:password,:password_confirmation)
-   end
 
-   def update_params
+  def user_params
     params.require(:user).
-      permit(:name,:email,:mobile,:city,:bio,:password,:password_confirmation)
-   end
+    permit(:name,:email,:mobile,:password,:password_confirmation)
+  end
 
-   def avatar_params
+  def update_params
     params.require(:user).
-      permit(:avatar)
-   end
+    permit(:name,:email,:mobile,:city,:bio,:password,:password_confirmation)
+  end
+
+  def avatar_params
+    params.require(:user).
+    permit(:avatar)
+  end
 
   def resolve_layout
     case action_name
