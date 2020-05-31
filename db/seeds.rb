@@ -9,12 +9,10 @@
 
 # Create main users
 User.create!( name:"RAD",
-              email:"RAD@RAD.com",
+              email:"rad2020rmit@gmail.com",
               mobile:"0412345678",
               password:"Rails2020",
-              city:"Melbourne",
-              # avatar: File.open(Rails.root.join('public','images','users','rails.png')
-            )
+              city:"Melbourne",)
 
 
 User.create!( name:"Melvin H",
