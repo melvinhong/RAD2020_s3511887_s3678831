@@ -20,7 +20,7 @@
     <div class="subcomment">
     <%comment.comments.each do |subcomment| %>
         <p style="font-size:12px">
-        <%= link_to get_user(subcomment.user_id).name, get_user(subcomment.user_id),class:"post-a-username" %> :
+        <%= link_to get_user(subcomment.user_id).name, get_user(subcomment.user_id) %> :
 
         <%= subcomment.content %>
         </p>
@@ -35,7 +35,7 @@
             <div class="form-group">
             <%= f.hidden_field :user_id, :value => current_user.id %>
             <%= f.hidden_field :comment_id, :value => comment.id %>
-            <%= f.text_area :content,  class: 'form-control', :rows => 2, placeholder: 'Enter comment content here' %>
+            <%= f.text_area :content,  class: 'form-control', :rows => 2, placeholder: 'Enter comment content here', class: "tinymce" %>
         </div>
         <div class="row">
         <div class="col-sm-2">
