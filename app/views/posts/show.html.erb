@@ -1,7 +1,6 @@
 <% provide(:title , @post.title) %>
 <script>
    $(document).on('turbolinks:load', function () {
-   tinymce.remove();
      tinymce.init({
      selector: '.tinymce',
      height: 300,
@@ -23,7 +22,7 @@
 
   <div class="container" style="width:75%">
 
-    <h1 class="container-fluid" style="word-wrap: break-word; font-size:35px"><%= @post.title %></h1>
+    <h1 class="container-fluid"><%= @post.title %></h1>
 
     <ul class="list-inline list-unstyled">
         <li>
