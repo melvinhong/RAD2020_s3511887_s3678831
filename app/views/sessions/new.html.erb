@@ -23,6 +23,18 @@
       </div>
 
       <div class = "row my-1">
+        <%= f.label :remember_me, class:"checkbox inline" do %>
+        <div class="col-sm-7">
+          <%= f.check_box :remember_me %>
+          <span>Remember Me</span>
+        <% end %>
+        </div>
+      </div>
+        
+          
+      
+
+      <div class = "row my-1">
         <div class = "col-md-10 pull-right">
           <%= f.submit "Login", class: "btn btn-success"%>
         </div>
