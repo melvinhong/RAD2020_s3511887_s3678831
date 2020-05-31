@@ -1,4 +1,4 @@
-<%= form_for(@verification = get_user_verification(current_user), url: verification_path, method: :patch)  do |f| %>
+<%= form_for(@verification = get_user_verification(current_user), url: verifications_path, method: :patch)  do |f| %>
 <%= render'shared/validate_error' %>
   <div class="input-group mb-3" style="margin-bottom: 25px;margin-top: 25px;">
     <div class="input-group-addon">

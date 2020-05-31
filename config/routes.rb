@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'verifications/new'
   root :to => "home#index"
   get    '/login'  ,           to: 'sessions#new'
   get    '/signup' ,           to: 'users#new'
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   get    '/avatar',            to: 'users#avatar'
   patch  '/avatar',            to: 'users#upload_avatar'
   get    '/verification',      to: 'users#verification'
-  patch  '/verification',      to: 'users#verification'
+  patch  '/verifications',      to: 'verifications#create'
   get    '/setting',           to: 'users#settings'
   post   '/setting',           to: 'users#update'
 

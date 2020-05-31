@@ -1,5 +1,8 @@
 class VerificationsController < ApplicationController
   before_action :logged_in?, only: [:create]
+  before_action :correct_user, only: [:edit, :update]
+  skip_before_action :verify_authenticity_token
+  
   include VerificationsHelper
   def create
     if current_user.create_verification(verification_params)
@@ -17,8 +20,7 @@ class VerificationsController < ApplicationController
 
   private
   def verification_params
-    params.require(:verification).
-      permit(:fullname,:cardnumber, :card)
+    params.require(:verification).permit(:fullname,:cardnumber, :card)
    end
 
 end
