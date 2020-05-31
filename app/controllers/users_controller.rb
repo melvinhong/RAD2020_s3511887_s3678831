@@ -80,6 +80,10 @@ class UsersController < ApplicationController
     @comments2 = Comment.paginate(page: params[:page], per_page: 3).where(post_id: nil)
   end
 
+  def my_posts
+    @my_posts = Post.paginate(page: params[:page], per_page: 5).where(user_id: current_user.id)
+  end
+  
   private
    def user_params
     params.require(:user).

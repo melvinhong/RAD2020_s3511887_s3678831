@@ -1,13 +1,10 @@
-<div class="col-sm-12">
-
-
+<div class="col-sm-12 pb-5">
   <%if @my_posts.exists?%>
-  <% @my_posts.each do |post| %>
-      <div class="well" style="margin-bottom:5px;" >
+    <% @my_posts.each do |post| %>
+      <div class="well" >
         <div class="media">
           <div class="media-body">
-            <h4 class="media-heading long-title"><%= link_to post.title, post, class:"custom-highlight" %></h3>
-            
+            <h4><%= link_to post.title, post %></h4>
             <ul class="list-inline list-unstyled">
               <li>
                 <i class="glyphicon glyphicon-calendar"></i>
@@ -15,7 +12,6 @@
               </li>
                |
               <li>
-                <i class="glyphicon glyphicon-fire"></i>
                 <%= getTopic(post.topic_id) %>
               </li>
                |
@@ -27,10 +23,9 @@
           </div>
         </div>
       </div>
-    <% end %> 
-    <% else %>
-    <h1>You do not have any posts yet</h1>
     <% end %>
+  <% else %>
+    <h4>You do not have any posts yet</h4>
+  <% end %>
  <%= will_paginate @my_posts%>
-
 </div>
