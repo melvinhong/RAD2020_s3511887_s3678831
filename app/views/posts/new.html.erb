@@ -1,5 +1,5 @@
 <% provide(:title ,"New Post") %>
-<script src="https://cdn.tiny.cloud/1/jv89sv6fzlfpijx5yiqoro3lhwdhjzcrdmodnd2f1d47qhcx/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/q0qojxqy4nf6pkdydh61n6ighpg3amfqxzr6ek3gc9o8gcdn/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
    $(document).on('turbolinks:load', function () {
    tinymce.remove();
@@ -33,7 +33,7 @@
       <div class="input-group-addon">
         <span class="input-group-text">Topic</span>
       </div>
-        <%= f.collection_select :topic_id, Topic.all,:id,:name,{}, {class: "form-control"} %>
+        <%= f.collection_select :topic_id, Topic.all,:id,:name,{prompt:"==Select=="}, {class: "form-control"} %>
     </div>
 
     <div class="input-group my-2" style="width:50%">
@@ -44,15 +44,7 @@
     </div>
 
     <div class="form-group">
-    <div class="image-upload my-2">
-      <label for="file-input">Upload Image
-         <span class="glyphicon glyphicon-picture"></span>
-      </label>
-        <%= f.file_field :picture, id:"file-input" ,accept:'image/jpeg,image/gif,image/png'%></i>
-    </div>
-
-    <%= f.text_area :content, placeholder: 'Enter post content here', class: "tinymce" %>
-
+      <%= f.text_area :content, placeholder: 'Enter Your Post Here', class: "tinymce" %>
     </div>
 
     <div class="row my-4">
@@ -69,14 +61,3 @@
   <% end %>
 
 </div>
-
-<script type="text/javascript">
-  $('#file-input').bind('change',function() {varsize_in_megabytes=this.files[0].size/1024/1024;
-  if(size_in_megabytes>5) {
-    alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
-
-
-
-</script>

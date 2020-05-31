@@ -30,7 +30,7 @@
     <div class="card-body">
       <h4 class="card-title">Topic</h4>
       <p>
-      <% @topics.each do |topic| %>
+      <% @topics.limit(12).each do |topic| %>
         <%= link_to topic.name, add_topic_path(:name => topic.name), onclick: "select_tag(this)" ,class: "sidebar-links-icon", remote: true%>
       <% end %>
       </p>
@@ -44,7 +44,7 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title"> Post </h4>
-      <% get_most_viewed_post.each do |post| %>
+      <% get_most_viewed_post.limit(12).each do |post| %>
         <h4 class="media-heading side-heading"><%= link_to post.title, post  , class:"custom-highlight"%></h4>
       <% end %>
     </div>
