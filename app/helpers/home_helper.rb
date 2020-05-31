@@ -4,9 +4,9 @@ module HomeHelper
         @posts = Post.where("created_at >= ?",oldest_day).order("created_at").reverse_order
         return @posts
     end
-    
+
     def get_recent_member
-        @User = User.all.order("updated_at").limit(12)
+        @User = User.all.order("updated_at").limit(8)
     end
 
     def get_most_viewed_post
