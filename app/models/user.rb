@@ -42,6 +42,12 @@ class User < ApplicationRecord
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
+  # Forgets a user
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
+
   # Sets the password reset attributes
   def create_reset_digest
     self.reset_token = User.new_token
