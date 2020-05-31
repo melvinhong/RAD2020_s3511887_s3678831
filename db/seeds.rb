@@ -13,8 +13,9 @@ User.create!( name:"RAD",
               mobile:"0412345678",
               password:"Rails2020",
               city:"Melbourne",
-              avatar: File.open(Rails.root.join('public','images','users','rails.png'))
+              # avatar: File.open(Rails.root.join('public','images','users','rails.png')
             )
+
 
 User.create!( name:"Melvin H",
               email:"mel@mel.com",

@@ -41,6 +41,15 @@ class UsersController < ApplicationController
       format.js
   end
 
+  def settings
+  @user_class = "nav-link active"
+  @home_class = ""
+    respond_to do |format|
+    format.html
+    format.js
+    end
+  end
+
   def verification
     @verification = Verifications.new
       respond_to do |format|
