@@ -1,53 +1,48 @@
-<div class="col-sm-12">
-<p>
+<div class="col-sm-12 pb-5">
   <h4 class="card-title">My comments</h4>
   <% if @my_comments.exists? %>
   <% @my_comments.each do |comment| %>
-      <div class="well" style="margin-bottom:5px;" >
-        <div class="media">
-          <div class="media-body">
-            <div class="col-sm-8">
-            <h4 class="media-heading long-title"> You commented  "<%= raw comment.content %>"</h4>
-            <h4 class="media-heading long-title">to <%= link_to get_post(comment.post_id).title, get_post(comment.post_id), class:"custom-highlight" %></h4>
-              </div>
-              <div class="col-sm-2" style="float:right">
-                <i class="glyphicon glyphicon-calendar"></i>
-                <%= comment.created_at %>
-              </div>
+      <div class="well mb-5">
+        <div class="media-body">
+          <div>
+            <p> You commented:<%=  raw comment.content %></p>
+            <p>to <%= link_to get_post(comment.post_id).title, get_post(comment.post_id) %></p>
+          </div>
+          <div class="col-sm-2 pull-right">
+            <i class="glyphicon glyphicon-calendar"></i>
+            <%= comment.created_at %>
           </div>
         </div>
       </div>
-  <% end %> 
+  <% end %>
   <% else %>
-  <h1>You do not comment to any post yet</h1>
+  <p>You have not made any comments to any posts yet.</p>
   <% end %>
   <%= will_paginate @my_comments %>
- </p> 
+
 </div>
-<div class="col-sm-12">
-<p>
-  <h4 class="card-title">My comments to someone comments</h4>
+<div class="col-sm-12 pb-5">
+  <h4 class="card-title">My comments to other user's comments</h4>
   <% if @my_comments_to_comments.exists? %>
   <% @my_comments_to_comments.each do |comment| %>
-      <div class="well" style="margin-bottom:5px;" >
-        <div class="media">
+      <div class="well mb-5">
+        <div>
           <div class="media-body">
               <div class="col-sm-8">
-                <h4 class="media-heading long-title">You commented "<%= raw comment.content %>"</h4>
-                <h4 class="media-heading long-title">to "<%= raw get_comment(comment.comment_id).content %>"</h4>
-                <h4 class="media-heading long-title">in <%= link_to get_post(get_comment(comment.comment_id).post_id).title, get_post(get_comment(comment.comment_id).post_id), class:"custom-highlight" %></h4>
+                <p>You commented:<%= raw comment.content %></p>
+                <p>To:<%= raw get_comment(comment.comment_id).content %></p>
+                <p>In: <%= link_to get_post(get_comment(comment.comment_id).post_id).title, get_post(get_comment(comment.comment_id).post_id), class:"custom-highlight" %></p>
               </div>
-              <div class="col-sm-2" style="float:right">
+              <div class="col-sm-2 pull-right">
                 <i class="glyphicon glyphicon-calendar"></i>
                 <%= comment.created_at %>
               </div>
           </div>
         </div>
       </div>
-  <% end %> 
+  <% end %>
    <% else %>
-  <h1>You do not comment to any comments yet</h1>
+  <p>You have not comment to any comments yet</p>
   <% end %>
   <%= will_paginate @my_comments_to_comments %>
- </p> 
 </div>
